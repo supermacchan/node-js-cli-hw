@@ -33,8 +33,10 @@ function listContacts() {
     fs.readFile(contactsPath)
     .then (data => {
         const parsedData = JSON.parse(data.toString());
+        const lastId = parsedData[parsedData.length - 1].id;
+        console.log(parsedData[parsedData.length - 1].id);
         const newContact = {
-            id: `${parsedData.length + 1}`,
+            id: `${Number(lastId) + 1}`,
             name,
             email,
             phone
