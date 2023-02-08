@@ -2,13 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const contactsPath = path.resolve('./db/contacts.json');
-console.log(contactsPath);
 
-// Добавь функции для работы с коллекцией контактов. 
-// В функциях используй модуль fs и его методы readFile() и writeFile()
-// Сделай экспорт созданных функций через module.exports
-
-// TODO: задокументировать каждую функцию
 function listContacts() {
     fs.readFile(contactsPath)
     .then (data => console.log(JSON.parse(data.toString())))
