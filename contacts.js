@@ -34,7 +34,6 @@ function listContacts() {
     .then (data => {
         const parsedData = JSON.parse(data.toString());
         const lastId = parsedData[parsedData.length - 1].id;
-        console.log(parsedData[parsedData.length - 1].id);
         const newContact = {
             id: `${Number(lastId) + 1}`,
             name,
